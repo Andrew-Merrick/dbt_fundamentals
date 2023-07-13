@@ -7,4 +7,5 @@ select
 
 from raw.jaffle_shop.customers
 )
+
 select * from customers
