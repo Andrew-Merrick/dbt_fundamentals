@@ -2,11 +2,26 @@ version: 2
 
 sources:
   - name: jaffle_shop
+    description: The jaffle shop db clone.
     database: raw
     schema: jaffle_shop
     tables:
       - name: customers
+        description: The raw source for customers data.
+        columns:
+          - name: id
+            description: The primary key for the raw customers data.
+            tests:
+              - unique
+              - not_null 
       - name: orders
+        description: The raw source for customer's orders.
+        columns:
+          - name: id
+            description: The primary key for the raw orders.
+            tests:
+              - unique
+              - not_null
         loaded_at_field: _etl_loaded_at
         freshness: 
           warn_after:

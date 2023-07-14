@@ -2,10 +2,12 @@ version: 2
 
 sources:
   - name: stripe
+    description: The Point Of Sale database.
     database: raw
     schema: stripe
     tables:
       - name: payment
+        description: The raw payments data.
         loaded_at_field: _batched_at
         freshness: 
           warn_after:
